@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/file-explorer": [
+                "fileExplorer/fileExplorer.js"
+            ],
+            "c/file-gallery": [
+                "fileGallery/fileGallery.js"
+            ],
+            "c/file-gallery-item": [
+                "fileGalleryItem/fileGalleryItem.js"
+            ],
+            "c/file-modal": [
+                "fileModal/fileModal.js"
+            ],
+            "c/file-toolbar": [
+                "fileToolbar/fileToolbar.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../.sfdx/typings/lwc/**/*.d.ts"
+    ]
+}

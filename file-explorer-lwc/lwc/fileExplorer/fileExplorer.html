@@ -1,0 +1,31 @@
+<template>
+    <lightning-layout multiple-rows="true">
+        <!-- Files Table -->
+        <lightning-layout-item size="12">
+            <lightning-layout>
+                <!-- Sidebar -->
+                <lightning-layout-item size="3">
+                    <lightning-vertical-navigation selected-item={fileType} onselect={onFileTypeSelect}>
+                        <lightning-vertical-navigation-section label={label.files}>
+                            <lightning-vertical-navigation-item-icon label={label.upload} name="upload" icon-name="utility:upload" onclick={openUploadModal}></lightning-vertical-navigation-item-icon>
+                            <template for:each={mimeTypes} for:item="type" for:index="index">
+                                <lightning-vertical-navigation-item-badge key={type.id} label={type.label} name={type.id}
+                                    badge-count={type.count}></lightning-vertical-navigation-item-badge>
+                            </template>
+                        </lightning-vertical-navigation-section>
+                    </lightning-vertical-navigation>
+                </lightning-layout-item>
+                <!-- File Gallery -->
+                <lightning-layout-item  padding="around-small" size="9">
+                    <!-- Search toolbar | working with bugs | removed due time constrains -->
+                    <!-- <c-file-toolbar onsearch={onListFilter}></c-file-toolbar> -->
+                    <c-file-gallery if:true={filesToDisplay} files={filesToDisplay} onselectfile={onSelectFile}></c-file-gallery>
+                    <span if:true={error}>{error}</span>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-layout-item>
+        <br />
+    </lightning-layout>
+    <!-- Preview Modal -->
+    <c-file-modal if:true={showModal} modal-type={modalType} modal-data={modalData} onclose={onCloseModal} ondownloadfile={onDownloadFile} onuploadfile={onUploadFile}></c-file-modal>
+</template>

@@ -1,0 +1,8 @@
+<template>
+    <div onclick={selectFile}>
+        <img if:true={isImage} src={file.url}>
+        <img if:true={isDocument} src="https://image.flaticon.com/icons/svg/684/684831.svg" class="document"/>
+        <img if:true={isUnknown} src="https://cdn3.iconfinder.com/data/icons/eldorado-stroke-documents/40/document_unknown-512.png" class="unknown"/>
+        <span>{formattedName}</span>
+    </div>
+</template>

@@ -1,0 +1,43 @@
+<template>
+    <div style="height: 800px; width: 80%;">
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+
+                <header class="slds-modal__header">
+                    <h2 if:true={isPreview} class="slds-text-heading_medium slds-hyphenate">{label.title.preview}</h2>
+                    <h2 if:true={isUpload} class="slds-text-heading_medium slds-hyphenate">{label.title.upload}</h2>
+                </header>
+
+                <!-- Preview -->
+                <div if:true={isPreview} class="slds-modal__content slds-p-around_medium">
+                    <!-- If Image -->
+                    <img if:true={isImage} src={fileSource} />
+                    <!-- If Document -->
+                    <img if:true={isDocument} src="https://image.flaticon.com/icons/svg/684/684831.svg"
+                        class="document" />
+                    <img if:true={isUnknown}
+                        src="https://cdn3.iconfinder.com/data/icons/eldorado-stroke-documents/40/document_unknown-512.png"
+                        class="unknown" />
+                </div>
+
+                <!-- Upload -->
+                <div if:true={isUpload} class="slds-modal__content slds-p-around_medium">
+                    <lightning-input class="file-upload-input" type="file" accept={acceptedFormats}
+                        onchange={handleUpload}></lightning-input>
+                    <span class="file-label" if:true={isFileLoaded}>{file.name}</span>
+                </div>
+
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={close}>{label.action.close}</button>
+                    <!-- Preview -->
+                    <button if:true={isPreview} class="slds-button slds-button_brand"
+                        onclick={download}>{label.action.download}</button>
+                    <!-- Upload -->
+                    <button if:true={isUpload} disabled={uploadDisabled} class="slds-button slds-button_brand"
+                        onclick={upload}>{label.action.upload}</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+</template>

@@ -1,0 +1,19 @@
+@font-face{font-family:'Calluna';
+    src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/callunasansregular-webfont.woff') format('woff');
+}
+
+:host {
+    font-family: Calluna, Arial, sans-serif;
+
+    display: block;
+    column-count: 3;
+    column-width: auto;
+    column-gap: 5px;
+    width: 100%;
+    margin: 10px auto;
+    word-break: break-all;
+}
+
+@media screen and (max-width: 750px) { 
+    :host { column-gap: 0px; }
+} 

@@ -1,0 +1,15 @@
+.file-upload-input {
+    display:inline-block;
+    margin: 0 auto;
+}
+
+.file-label {
+    margin-left: 5px;
+}
+
+.document, .unknown {
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+    opacity: .4;
+}

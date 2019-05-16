@@ -1,0 +1,16 @@
+input[type=search] {
+    position: absolute;
+    right: 5px;
+    top: -35px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTZ05mxDBTZpSv7rEVlXfyw9qzxlHYPBNi34-lfpZNVegur5-p');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+input[type=search]::placeholder {
+    color: #ccc;
+}
