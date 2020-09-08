@@ -1,4 +1,4 @@
-# AWS Service File Explorer [0Ho1v000000TN31CAG]
+# AWS Service File Explorer
 
 Provides an interface to connect to AWS Services.
 
@@ -119,7 +119,7 @@ Api name of the Object
 
 # Version History
 
-### v0.0.1 (packageId: 04t1v000001YVGwAAO)
+### v0.0.1
 
 - Initial Release
 - AWS Interface
